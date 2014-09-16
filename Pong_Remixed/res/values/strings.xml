@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">pong_game</string>
+    <string name="action_settings">Settings</string>
+    <string name="start_button">Start</string>
+    <string name="test">Test</string>
+    <string name="game_difficulty">Difficulty</string>
+    <string name="difficulty_easy">Easy </string>
+     <string name="difficulty_medium">Medium </string>
+      <string name="difficulty_hard">Hard </string>
+   	<string name="multiplayer">Two player</string>
+   	<string name ="choose_side">Right side? </string>
+   	<string  name="sound_effect">Sound Effects</string>
+   	<string  name="score_title">Current Scores </string>
+   	<string name="unspent_title">Unspent Points</string>
+   	<string name="lifetime_title">Lifetime Points</string>
+   	<string name="score_button">Scores</string>
+   	<string name="pause_menu"> Game Paused</string>
+   	<string name="positive_pause">Resume</string>
+   	<string name="negative_pause">Quit</string>   	
+	<string name="win_title">You Win!</string>
+	<string name="streak_title">Streak: </string>
+	<string name="bonus_title">Bonus: </string>
+	<string name="total_title">Points Earned: </string>
+	<string name="negative_win">Quit</string>
+	<string name="positive_win">Play Again</string>
+	<string name="lose_message">YOU LOSE</string>
+	<string name="left_win">Left Player wins!</string>
+	<string name="right_win">Right Player wins!</string>
+	<string name="demo_content_description">TESTING </string>
+	<string name="store_button_message">Store</string>
+	<string name="store_points">Cost: </string>
+	<string name="store_description"> Description: </string>
+</resources>

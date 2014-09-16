@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center|top"
+     >
+    
+    
+    
+
+    <TextView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/score_title"
+        android:gravity="center_horizontal"
+        android:textColor="@android:color/black"
+        android:textSize="30sp"
+        android:layout_marginBottom="30dp"
+        
+        />
+    
+       <TextView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/unspent_title"
+        android:gravity="center_horizontal"
+        android:typeface="monospace"
+        android:textColor="@android:color/black"
+        android:textSize="15sp"
+        android:layout_margin="20dp"
+        android:height="100dp"
+        android:id="@+id/unspent" />
+       
+        
+              
+        
+    
+   
+        <TextView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/lifetime_title"
+        android:gravity="center_horizontal"
+        android:typeface="monospace"
+        android:textColor="@android:color/black"
+        android:height="100dp"
+        android:textSize="15sp"
+        android:layout_margin="20dp"
+        android:id="@+id/lifetime"
+        />
+      
+    
+</LinearLayout>

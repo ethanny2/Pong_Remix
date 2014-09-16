@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    
+    <item android:id="@+id/difficulty" android:title="@string/game_difficulty"
+        android:icon="@android:drawable/ic_menu_manage"	>
+        	<menu>
+        	<item android:id="@+id/easy" android:title="@string/difficulty_easy"
+        	    	android:checkable="true"/>
+        	<item android:id="@+id/medium" android:title="@string/difficulty_medium"
+        	    	android:checkable="true"/>	
+        	    	<item android:id="@+id/hard" android:title="@string/difficulty_hard"
+        	    	android:checkable="true"/>		
+        	</menu>
+        </item>
+    <item android:id="@+id/two_player" android:title="@string/multiplayer"
+        android:checkable="true" />
+   <item android:id="@+id/side" android:title="@string/choose_side"
+        android:checkable="true" />
+  
+     <item android:id="@+id/sound" android:title="@string/sound_effect"
+        android:checkable="true"  android:checked="true"/>
+  
+
+</menu>
