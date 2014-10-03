@@ -6,11 +6,13 @@ import android.app.Application;
 import android.content.ContentValues;
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.media.MediaPlayer;
 import android.util.Log;
 
 //This class will handle the options, and other settings, like the game modes, 1p or 2p, what side
 //the player wants to be on, turning off and on sounds effects etc....
+//Apparently this class extends context at one point hmm
 public class PongApplication extends Application {
 	public static final String TAG = PongApplication.class.getSimpleName();
 	// What side the player is on
@@ -19,7 +21,6 @@ public class PongApplication extends Application {
 	ContentValues difficulty = new ContentValues();
 	// Keys for the content values
 	public static final String KEY_DIFFICULTY = "difficulty";
-
 	// Create a MediaPlayer to handle the selected sound
 	// Makes more sense to contain the media player in here so the sound can be
 	// initailzed
@@ -66,8 +67,30 @@ public class PongApplication extends Application {
 	boolean inTitleScreen;
 
 	// ArrayList to hold the storeItem Objects
-	ArrayList<storeItem> storeItems = new ArrayList<storeItem>();
+	ArrayList<storeItem> storeItems;
 
+	//Constant for size of store items, for now just put 10
+	final static int NUMBER_OF_STORE_ITEMS=10;
+	
+	
+			
+	//STORE ITEM #1, COIN SPIRTE FOR BALL
+	final static int COIN_COST=20;
+	final static String COIN_DESCRIPTION= "A classic coin skin for the ball, reminds you a certain plumber";
+	final Bitmap COIN_SRC = BitmapFactory.decodeResource(getResources(),R.drawable.coin);
+	final static String COIN_NAME = "Golden Coin";
+	
+	//Store ITEM #2, A FOREST BACKGROUND
+	final static int FOREST_COST=40;
+	final static String FOREST_DESCRIPTION= "Turns the back into a lush hand drawn forest. Don't get lost!";
+	final Bitmap FOREST_SRC = BitmapFactory.decodeResource(getResources(),R.drawable.forest_background);
+	final static String FOREST_NAME = "Verdant Forest";
+	
+	
+	
+	
+	
+	
 	public void onCreate() {
 		super.onCreate();
 
@@ -242,6 +265,25 @@ public class PongApplication extends Application {
 	public void setStoreItems(ArrayList<storeItem> storeItems) {
 		this.storeItems = storeItems;
 	}
+	
+	/*
+	 * Helper method to initialize the array list of store items to some
+	 * constant value, how every man items are in the store for that 
+	 * current update
+	 */
+	public void initializeStoreArray(){
+		storeItems = new ArrayList<storeItem>(NUMBER_OF_STORE_ITEMS);
+		//Item Number #1 coin sprite for the ball
+		storeItem coinItem  = new storeItem(COIN_COST, COIN_DESCRIPTION, COIN_SRC, COIN_NAME, false);
+		storeItem forestItem = new storeItem(FOREST_COST, FOREST_DESCRIPTION, FOREST_SRC, FOREST_NAME, false);
+		//put in arrayList
+		storeItems.add(coinItem);
+		storeItems.add(forestItem);
+		
+	}
+	
+ 
+	
 
 	// Was going to make an ArrayList of Hashmaps, but... it would be too much
 	// of a
@@ -266,6 +308,11 @@ public class PongApplication extends Application {
 			this.name = name;
 		}
 
+		public void setUnlocked(boolean val){
+			unlocked=val;
+		}
+		
+		
 	}
 
 }

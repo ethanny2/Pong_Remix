@@ -1,7 +1,10 @@
 package com.example.pong_game;
 
+import android.app.backup.SharedPreferencesBackupHelper;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -11,6 +14,12 @@ public class StartScreen extends MenuActivity {
 	private Button startButton;
 	private Button scoresButton;
 	private Button storeButton;
+	// Getting shared preferences, checking inside the preferences
+	// for references to keys-boolean pairs. The key is the name of
+	// the item, the boolean is weather it has been bought or not
+
+	SharedPreferences prefs = PreferenceManager
+			.getDefaultSharedPreferences(this);
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -34,13 +43,23 @@ public class StartScreen extends MenuActivity {
 		if (pongApplication.getDifficulty() == null) {
 			pongApplication.setDifficulty("DEFAULT");
 		}
-		
-		//Check if the arrayList with the storeItem details is null or has nothing, if so populate it.
-		//Should only be done once...
-		if(pongApplication.getStoreItems().size()<=0 || pongApplication.getStoreItems()==null){
+
+		// This list should be created once everytime it is null or empty, when
+		// the user quits the
+		// app and comes back in
+		if (pongApplication.getStoreItems().size() <= 0
+				|| pongApplication.getStoreItems() == null) {
+			if (prefs.getBoolean(pongApplication.COIN_NAME, false)) {
+				
+			}
+			if (prefs.getBoolean(pongApplication.FOREST_DESCRIPTION, false)) {
+				
+			}
 			
+			pongApplication.initializeStoreArray();
+			// Also check if they bought anything
+			// Janky implementation...
 		}
-		
 
 		startButton.setOnClickListener(new View.OnClickListener() {
 			@Override
